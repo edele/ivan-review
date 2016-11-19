@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
+    <!-- Скрипт должен грузиться в конце страницы, иначе он мешает отрисовке. -->
 </head>
 
 <body>
 
     <body>
         <div id="leftContainer">
+            <!-- Зачем здесь айди leftContainer? Почему нельзя было указать просто класс? -->
             <ul id="side-menu">
                 <li>
                     <a href="">why hyve</a>
@@ -34,6 +36,7 @@
         </div>
         
         <img src="../static/Triangle.svg" alt="" class="triangle">
+        <!-- зачем создал на одном уровне статик и паблик папки? Это же одно и то же. У тебя будут сложности при настройке веб-сервера с такой структурой -->
         
         <div id="rightContainer">
             <div class="pattern-overlay"></div>
@@ -47,24 +50,29 @@
                         <div class="form-group">                            
                             <input type="text" id="firstName" placeholder="First Name *" class="input-validation" />
 <!--                            <label>First Name<span class="text-primary"> *</span></label>-->
+                                <!-- почему это закомменчено, а не удалено? http://edele.ru/all/just-delete/ -->
                         </div>
                         <div class="form-group">
                            <input type="text" id="lastName" placeholder="Last Name *" class="input-validation" />
 <!--                            <label>Last Name<span class="text-primary"> *</span></label>                            -->
+                                <!-- почему это закомменчено, а не удалено? http://edele.ru/all/just-delete/ -->
                         </div>
                     </div>
                     <div class="form-inline">
                         <div class="form-group">
                             <input type="text" id="email" placeholder="Email Address *" class="input-validation" />
 <!--                            <label>Email Address<span class="text-primary"> *</span></label>                            -->
+                                <!-- почему это закомменчено, а не удалено? http://edele.ru/all/just-delete/ -->
                         </div>
                         <div class="form-group">
                             <input type="text" id="phone" placeholder="Telephone *" class="input-validation" />
 <!--                            <label>Telephone<span class="text-primary"> *</span></label>                            -->
+                                <!-- почему это закомменчено, а не удалено? http://edele.ru/all/just-delete/ -->
                         </div>
                     </div>
 
                     <div class="form-group select-group">                        
+                        <!-- смело даёшь айдишники элементам. они же должны быть уникальными. уверен, что на странице никогда не появится элемент, который тоже можно будет называть reason? Если бы я давал айди, то что-то типа main-form-input-reason, вообще бы лучше не давал айди, а достал бы из дома форму, а внутри неё искал бы по name аттрибуту -->
                         <select name="" id="reason">
                             <option value="">Select a Reason *</option>
                             <option value="">Marketing</option>
