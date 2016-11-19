@@ -1,0 +1,276 @@
+@import 'normalize.css';
+@mixin font-face($family, $path, $weight, $style) {       
+    @font-face {
+        font-family: $family;
+        font-weight: $weight;
+        font-style: $style;        
+        src: url($path + '.otf');        
+    }    
+}
+@include font-face('HK-light', HKGrotesk-Light, 300, normal);
+@include font-face('HK-medium', HKGrotesk-Medium, 500, normal);
+@include font-face('HK-bold', HKGrotesk-Bold, 700, normal);
+
+
+// Variables
+
+$main-color: #fff;
+$secondary-color: #222629;
+$primary-color: #03c1de;
+$error-color: #ff4f00;
+$success-color: #8ac53f;
+
+// Variables-End
+
+
+// Core
+html {
+    min-height: 100%;
+    height: 100%;
+}
+body {
+    font: 14px 'HK-light';
+    color: $secondary-color;
+    overflow-x: hidden;
+    background: $secondary-color;
+    min-height: 100%;
+    height: 100%;
+}
+h2 {
+    font: 24px 'HK-medium';
+    text-transform: uppercase;
+    line-height: 28px;
+}
+p {
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+// Core-End
+
+
+
+// Left Container
+
+#leftContainer {
+    width: 35%;
+    height: 100%;
+    min-height: 769px;
+    background: $main-color;
+    color: $secondary-color;
+    float: left;
+}
+#side-menu {
+    list-style: none;
+    padding-top: 280px;
+    li {
+        margin-bottom: 20px;
+        a {
+            text-transform: uppercase;
+            font-size: 21px;
+            color: $secondary-color;
+            text-decoration: none;
+            letter-spacing: 1px;
+            display: block;
+            font-family: 'HK-light';
+        }
+        a:hover {
+            color: $primary-color;
+            transition: .2s;
+        }
+    }
+}
+
+// Left Container End
+
+
+
+// Right Container
+
+#rightContainer {
+    width: 65%;
+    height: 100%;
+//    background: $secondary-color;
+    color: $main-color;
+    float: right;    
+    position: relative;
+    z-index: 1;
+    
+}
+.pattern-overlay {
+    background: url('static/pattern.png') repeat;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0px;
+    bottom: 0px;
+}
+.form-container {
+    padding-left: 150px;
+    padding-right: 50px;
+    padding-top: 210px;
+}
+
+
+// Form
+
+#callBackForm {
+    width: 600px;        
+}
+// 
+
+input,
+textarea {
+    display: block;
+    background-color: transparent;
+    color: $main-color;
+    border: none;
+    border-bottom: 1px solid $main-color;
+    outline: 0;
+    width: 100%;    
+    font-size: 14px;
+    margin-bottom: 24px;
+    padding: 0 0 8px 0;
+    box-shadow: none;
+    border-radius: 0;
+    background-image: none;
+    resize: none;
+}
+textarea {
+    height: 75px;
+}
+textarea[placeholder] {
+    color: $main-color;
+    opacity: .8;
+}
+::-webkit-input-placeholder {
+    color: $main-color;
+    opacity: .8;
+}
+::-moz-placeholder {
+    color: $main-color;
+    opacity: .8;
+}
+:-ms-input-placeholder {
+    color: $main-color;
+    opacity: .8;
+}
+:-moz-placeholder {
+    color: $main-color;
+    opacity: .8;
+}
+input:focus,
+textarea:focus {
+    border-color: $primary-color;
+}
+input:focus ~ label {
+    display: none;
+}
+input.error {
+    border-color: $error-color;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-image: url('error-icon.png');
+}
+input.success {
+    border-color: $success-color;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-image: url('success-icon.png');
+
+}
+
+.form-inline {
+    text-align: right;
+}
+.form-group {
+       text-align: left;
+}
+.form-inline > .form-group {
+    width: 48%;
+    display: inline-block; 
+}
+.form-inline > .form-group:first-child {
+    margin-right: 20px;
+    width: 220px;
+}
+.form-inline > .form-group:last-child {
+    width: 290px;
+}
+.form-inline:nth-child(2) > .form-group:last-child {
+    width: 272px;
+}
+.select-group, textarea {
+    float: right;
+}
+select {
+    display: block;
+    height: 25px;
+    width: 499px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid $main-color;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-image: url('caret.png');
+    cursor: pointer;
+    color: $main-color;
+    padding: 0 25px 0 0;
+    margin-bottom: 24px;
+    opacity: 0.8;
+}
+option {
+    padding: 30px;
+    color: $secondary-color;
+}
+.textarea-group {
+    float: right;
+    width: 473px;
+}
+.btn-form-submit {
+    text-transform: uppercase;
+    color: $primary-color;
+    background: none;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;    
+    padding: 15px 30px;
+}
+.btn-form-submit:hover {
+    color: darken($primary-color, 10%)
+}
+label {
+    position: absolute;
+    margin-top: -46px;
+    color: $main-color;
+    z-index: -1;    
+    opacity: 0.8;
+}
+.text-primary {
+    color: $primary-color;
+}
+
+// Form End
+
+.triangle {
+/*    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 100vh 0 0 275px;
+    border-color: transparent transparent transparent #ffffff;
+     */
+    position: absolute;
+    z-index: 1;
+    left: 35%;
+    height: 100%;
+    min-height: 769px;
+}
+.form-heading {
+    padding-left: 30px;
+}
